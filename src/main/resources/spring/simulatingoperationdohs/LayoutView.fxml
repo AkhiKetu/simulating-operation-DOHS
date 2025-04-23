@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="layoutBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spring.simulatingoperationdohs.controllers.LayoutViewController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="userNameMenu" mnemonicParsing="false" text="User Name">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#signOutOnAction" text="SignOut" />
+            </items>
+          </Menu>
+          <Menu fx:id="adminMenu" mnemonicParsing="false" text="Admin">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#createUserOnAction" text="Create User" />
+              <MenuItem mnemonicParsing="false" onAction="#userManagementOnAction" text="User Management" />
+                  <MenuItem mnemonicParsing="false" onAction="#propertyListingOnAction" text="Property Listing" />
+                  <MenuItem mnemonicParsing="false" onAction="#securityReportsOnAction" text="Security Reports" />
+                  <MenuItem mnemonicParsing="false" onAction="#maintenanceRequestOnAction" text="Maintenance Requests" />
+                  <MenuItem mnemonicParsing="false" onAction="#complaintsAndFeedbackOnAction" text="Complaints &amp; Feedback" />
+                  <MenuItem mnemonicParsing="false" onAction="#visitorLogsOnAction" text="Visitor Logs" />
+                  <MenuItem mnemonicParsing="false" onAction="#communityAnnouncementsOnAction" text="Community Announcements" />
+            </items>
+          </Menu>
+          <Menu fx:id="tenantMenu" mnemonicParsing="false" text="Tenant">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#payRentOnlineOnAction" text="Pay Rent Online" />
+                  <MenuItem mnemonicParsing="false" onAction="#submitMaintenanceRequestOnAction" text="Submit Maintenance Request" />
+                  <MenuItem mnemonicParsing="false" onAction="#accessCommunityFeaturesOnAction" text="Access Community Features" />
+                  <MenuItem mnemonicParsing="false" onAction="#trackPaymentAndRentalHistoryOnAction" text="Track Payment &amp; Rental History" />
+                  <MenuItem mnemonicParsing="false" onAction="#requestLeaseExtensionOrTerminationOnAction" text="Request Lease Extension Or Termination" />
+                  <MenuItem mnemonicParsing="false" onAction="#rateAndReviewServiceProvidersOnAction" text="Rate And Review Service Providers" />
+                  <MenuItem mnemonicParsing="false" onAction="#logoutAndSecureAccountsOnAction" text="Logout And Secure Accounts" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="71.0" layoutY="167.0" prefHeight="38.0" prefWidth="492.0" text="Welcome to Simulation operation of DOHS">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

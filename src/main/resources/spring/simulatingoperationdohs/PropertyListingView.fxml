@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spring.simulatingoperationdohs.controllers.PropertyListingViewController">
+   <children>
+      <Label layoutX="29.0" layoutY="31.0" text="Property Name" />
+      <TextField fx:id="propertyNameTextField" layoutX="120.0" layoutY="28.0" />
+      <Label layoutX="343.0" layoutY="31.0" text="Address" />
+      <TextField fx:id="addressTextField" layoutX="420.0" layoutY="28.0" />
+      <Label layoutX="33.0" layoutY="64.0" text="Price" />
+      <TextField fx:id="priceTextField" layoutX="88.0" layoutY="61.0" />
+      <Button layoutX="28.0" layoutY="111.0" mnemonicParsing="false" onAction="#submitButtonOnAction" text="Submit" />
+      <TextArea fx:id="priceListingTextArea" layoutX="421.0" layoutY="66.0" prefHeight="62.0" prefWidth="151.0" style="-fx-border-color: red;" />
+      <TableView fx:id="priceListingTable" layoutX="28.0" layoutY="156.0" prefHeight="170.0" prefWidth="558.0">
+        <columns>
+          <TableColumn fx:id="propertyNameTableColumn" prefWidth="193.5555362701416" text="Property Name" />
+          <TableColumn fx:id="priceTableColumn" prefWidth="121.77782440185547" text="Price" />
+            <TableColumn fx:id="addressTableColumn" prefWidth="233.3332977294922" text="Address Field" />
+        </columns>
+      </TableView>
+      <Button layoutX="510.0" layoutY="352.0" mnemonicParsing="false" onAction="#dashboardButton" prefHeight="34.0" prefWidth="74.0" text="Dashboard" />
+   </children>
+</AnchorPane>
