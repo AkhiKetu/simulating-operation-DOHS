@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="550" prefWidth="700" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="spring.simulatingoperationdohs.controllers.CommunityAnnouncementViewController">
+
+    <Label layoutX="20" layoutY="20" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Community Announcements Events" />
+
+    <Label layoutX="20" layoutY="70" text="Title:" />
+    <TextField layoutX="150" layoutY="65" prefWidth="400" />
+
+    <Label layoutX="20" layoutY="120" text="Date Time:" />
+    <DatePicker layoutX="150" layoutY="115" />
+    <TextField layoutX="300" layoutY="115" prefWidth="120" promptText="Time" />
+
+    <Label layoutX="20" layoutY="170" text="Venue:" />
+    <TextField layoutX="150" layoutY="165" prefWidth="400" />
+
+    <Label layoutX="20" layoutY="220" text="Description:" />
+    <TextArea layoutX="150" layoutY="215" prefHeight="100" prefWidth="400" />
+
+    <Label layoutX="20" layoutY="330" text="Attachments:" />
+    <Button layoutX="150" layoutY="325" text="Upload File" />
+
+    <CheckBox layoutX="150" layoutY="370" text="Schedule for later" />
+
+    <Button layoutX="150" layoutY="420" text="Verify Publish" />
+    <Button layoutX="270" layoutY="420" text="Notify Residents" />
+
+    <TableView layoutX="20" layoutY="470" prefHeight="60" prefWidth="650" />
+   <Button layoutX="433.0" layoutY="420.0" mnemonicParsing="false" onAction="#dashboardButton" text="Dashboard" />
+
+</AnchorPane>

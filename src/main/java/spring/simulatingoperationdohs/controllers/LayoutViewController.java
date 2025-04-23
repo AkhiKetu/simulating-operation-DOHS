@@ -42,6 +42,19 @@ public class LayoutViewController
 
     @javafx.fxml.FXML
     public void communityAnnouncementsOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(
+                    MainApplication.class.getResource("CommunityAnnouncementView.fxml")
+            );
+            Scene communityAnnouncement = new Scene(loader.load());
+
+            Stage stage = (Stage) layoutBorderPane.getScene().getWindow();
+            stage.setScene(communityAnnouncement);
+            stage.setTitle("Community Announcement");
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     @javafx.fxml.FXML
     public void complaintsAndFeedbackOnAction(ActionEvent actionEvent) {
@@ -81,6 +94,19 @@ public class LayoutViewController
     }
     @javafx.fxml.FXML
     public void visitorLogsOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(
+                    MainApplication.class.getResource("visitorLogsView.fxml")
+            );
+            Scene visitorLogs = new Scene(loader.load());
+
+            Stage stage = (Stage) layoutBorderPane.getScene().getWindow();
+            stage.setScene(visitorLogs);
+            stage.setTitle("Visitor Logs");
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     @javafx.fxml.FXML
     public void trackPaymentAndRentalHistoryOnAction(ActionEvent actionEvent) {
@@ -176,7 +202,6 @@ public class LayoutViewController
             );
             Scene createUserScene = new Scene(loader.load());
 
-            // Get the stage from any node in the current scene
             Stage stage = (Stage) layoutBorderPane.getScene().getWindow();
             stage.setScene(createUserScene);
             stage.setTitle("Create User");
