@@ -6,6 +6,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import spring.simulatingoperationdohs.MainApplication;
+import spring.simulatingoperationdohs.modelClass.User;
+import spring.simulatingoperationdohs.utility.FileHandler;
 
 public class CreateUserViewController
 {
@@ -21,6 +23,8 @@ public class CreateUserViewController
     private TextField contactTextField;
     @javafx.fxml.FXML
     private TextArea createUserTextArea;
+    @javafx.fxml.FXML
+    private TextField passwordTextField;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -32,6 +36,7 @@ public class CreateUserViewController
         String email = emailTextField.getText().trim();
         String name = nameTextField.getText().trim();
         String contact = contactTextField.getText().trim();
+        String password = passwordTextField.getText().trim();
 
         Alert alert = new Alert(Alert.AlertType.ERROR);
 
@@ -105,6 +110,7 @@ public class CreateUserViewController
         contactTextField.clear();
         createUserTextArea.clear();
         statusGroup.selectToggle(null);
+        passwordTextField.clear();
 
         Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
         successAlert.setTitle("Success");
@@ -114,6 +120,9 @@ public class CreateUserViewController
 
         // Print to terminal
         System.out.println("User created: ID = " + userId + ", Name = " + name + ", Email = " + email + ", Contact = " + contact + ", Status = " + status);
+        User user = new User(Integer.parseInt(userId), password, name, email, status);
+
+        FileHandler.writeObjectToFile(user, "users.bin");
     }
 
     @javafx.fxml.FXML

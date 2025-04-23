@@ -11,8 +11,8 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spring.simulatingoperationdohs.controllers.CreateUserViewController">
    <children>
-      <Label layoutX="79.0" layoutY="66.0" text="User Id" />
-      <TextField fx:id="userIdTextField" layoutX="134.0" layoutY="64.0" />
+      <Label layoutX="79.0" layoutY="32.0" text="User Id" />
+      <TextField fx:id="userIdTextField" layoutX="134.0" layoutY="30.0" />
       <Label layoutX="79.0" layoutY="104.0" text="Name" />
       <TextField fx:id="nameTextField" layoutX="134.0" layoutY="102.0" />
       <Label layoutX="79.0" layoutY="140.0" text="Email" />
@@ -32,5 +32,7 @@
       </Button>
       <TextArea fx:id="createUserTextArea" layoutX="387.0" layoutY="59.0" prefHeight="138.0" prefWidth="200.0" />
       <Button layoutX="496.0" layoutY="350.0" mnemonicParsing="false" onAction="#dashboardButton" text="Dashboard" />
+      <Label layoutX="79.0" layoutY="69.0" text="Password" />
+      <TextField fx:id="passwordTextField" layoutX="134.0" layoutY="67.0" />
    </children>
 </AnchorPane>

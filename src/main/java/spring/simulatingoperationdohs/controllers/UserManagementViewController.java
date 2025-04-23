@@ -8,6 +8,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import spring.simulatingoperationdohs.MainApplication;
 import spring.simulatingoperationdohs.modelClass.User;
+import spring.simulatingoperationdohs.utility.FileHandler;
+
+import java.util.ArrayList;
 
 public class UserManagementViewController
 {
@@ -40,16 +43,51 @@ public class UserManagementViewController
         userIdTableColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         emailTableColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
-        contactTableColumn.setCellValueFactory(new PropertyValueFactory<>("contact"));
+        contactTableColumn.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
         statusTableColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+
     }
 
     @javafx.fxml.FXML
     public void searchButtonOnAction(ActionEvent actionEvent) {
+        ArrayList<User> users = FileHandler.readObjectFromFile("users.bin");
+
+        if (users != null && !users.isEmpty()) {
+            String input = searchIdTextField.getText().trim();
+
+            if (input.isEmpty()) {
+
+                userManagementTableView.getItems().setAll(users);
+                userManagementTextArea.setText("All users loaded.");
+                return;
+            }
+
+            try {
+                int searchId = Integer.parseInt(input);
+                for (User user : users) {
+                    if (user.getId() == searchId) {
+                        userManagementTableView.getItems().clear();
+                        userManagementTableView.getItems().add(user);
+                        userManagementTextArea.setText("User found: " + user.getName() + " (ID: " + user.getId() + ")"+
+                                "\nEmail: " + user.getEmail() +
+                                "\nStatus: " + user.getStatus());
+                        return;
+                    }
+                }
+                userManagementTextArea.setText("User not found with ID: " + searchId);
+            } catch (NumberFormatException e) {
+                userManagementTextArea.setText("Please enter a valid numeric ID.");
+            }
+
+        } else {
+            userManagementTextArea.setText("No users found or file not loaded.");
+        }
     }
 
     @javafx.fxml.FXML
     public void saveChangesButtonOnAction(ActionEvent actionEvent) {
+
     }
 
     @javafx.fxml.FXML
